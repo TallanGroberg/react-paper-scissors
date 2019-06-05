@@ -12,13 +12,15 @@ class App extends React.Component {
 
 choices = ['rock', 'paper', 'scissors']
 
-  Compick = (choices) => {
-    const {compChoice} = [Math.floor(Math.random() * choices.length)]({compChoice: choices})
+  compick = () => {
+    const choices = ['rock', 'paper', 'scissors'];
+    return choices[Math.floor(Math.random() * choices.length)];
   }
 
   optionClick = (option) => {
+
       const {userChoice} = this.state;
-      this.setState({ userChoice: option, });
+      this.setState({ userChoice: option, compChoice: this.compick() });
     };
 
   render() {
