@@ -8,9 +8,9 @@ import { Container, Header, } from "semantic-ui-react";
 class App extends React.Component {
   state = { userChoice: null, compChoice: null, };
 
-// i want to choose from a an array a random string and place that value in compChoice value
+// i want to display the image of the userChoice
 
-choices = ['rock', 'paper', 'scissors']
+
 
   compick = () => {
     const choices = ['rock', 'paper', 'scissors'];
@@ -31,6 +31,9 @@ choices = ['rock', 'paper', 'scissors']
         <OptionBox name="rock" img={rock} optionClick={this.optionClick} />
         <OptionBox name="paper" img={paper} optionClick={this.optionClick} />
         <OptionBox name="scissors" img={scissor} optionClick={this.optionClick} />
+        <div>you chose: {this.state.userChoice}
+        <hr />
+        computer chose: {this.state.compChoice}</div>
       </Container>
     );
   };
